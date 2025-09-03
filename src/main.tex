@@ -1,0 +1,67 @@
+\documentclass[12pt]{book}
+
+\usepackage{dirtree}
+
+
+\usepackage{geometry}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+% Listings + upquote (for proper straight quotes)
+\usepackage{listings}
+\usepackage{upquote}
+\usepackage[edges]{forest}
+
+% --- Define YAML language for listings ---
+\lstdefinelanguage{YAML}{
+  morekeywords={true,false,null,y,n,yes,no,on,off},
+  sensitive=false,
+  morecomment=[l]{\#},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+% Default listings configuration
+\lstset{
+  language=Python,             % default language (can be overridden per block)
+  basicstyle=\ttfamily\small,
+  keywordstyle=\color{blue},
+  commentstyle=\color{teal!60!black},
+  stringstyle=\color{orange!70!black},
+  numberstyle=\tiny,
+  numbers=left,
+  stepnumber=1,
+  numbersep=8pt,
+  frame=single,
+  rulecolor=\color{black},
+  showstringspaces=false,
+  breaklines=true,
+  keepspaces=true,
+  tabsize=4,
+  columns=fullflexible,
+  upquote=true
+}
+
+% Hyperref should be loaded after most packages
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  pdfpagemode=UseOutlines,
+  bookmarksopen=true,
+  bookmarksopenlevel=2
+}
+
+% Section and TOC depth
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+\begin{document}
+\tableofcontents
+
+\include{code/code}
+
+\end{document}

@@ -1,0 +1,60 @@
+\documentclass{book}
+% This part is for another and better form code highlighting
+\usepackage{minted}
+\usemintedstyle{friendly}
+%%setting for all syntaxes
+\setminted{}
+    fontsize=\small,
+    linenos,
+    breaklines,
+    frame=single,
+    tabsize=4,
+    autogobble,
+}
+%% if you want something special for python
+\setminted[python]{fontsize=\footnotesize}
+%% a short form for minted python inline
+\newcommand{\pyl}[1]{\mintinline{python}{#1}}
+
+\begin{document}
+The packages that you can use are. In preamble
+
+
+\section{Highlighting}
+    
+    \subsection{Minted}
+        \begin{minted}{latex}
+            % This part is for another and better form code highlighting
+            \usepackage{minted}
+            \usemintedstyle{friendly}
+            %%setting for all syntaxes
+            \setminted{
+                fontsize=\small,
+                linenos,
+                breaklines,
+                frame=single,
+                tabsize=4,
+                autogobble,
+            }
+            %% if you want something special for python
+            \setminted[python]{fontsize=\footnotesize}
+            %% a short form for minted python inline
+            \newcommand{\pyl}[1]{\mintinline{python}{#1}}
+        \end{minted}
+        and in the document:
+        \begin{minted}{python}
+            class MyClass:
+                def __init__(self, x: int):
+                    self.x = x
+            
+                def double(self) -> int:
+                    return self.x * 2
+            
+            
+            obj = MyClass(5)
+            print(obj.double())
+        \end{minted}
+
+\end{document}
+
+        

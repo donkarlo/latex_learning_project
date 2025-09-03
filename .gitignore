@@ -1,0 +1,43 @@
+# --- Python build/artifacts ---
+__pycache__/
+*.py[cod]
+*$py.class
+.dist-info/
+.eggs/
+*.egg
+*.egg-info/
+build/
+dist/
+
+# --- Virtual envs ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Jupyter ---
+**/.ipynb_checkpoints/
+# خودِ .ipynb ها را حذف نکن! (نمی‌نویسیم *.ipynb)
+
+# --- PyCharm / IntelliJ ---
+.idea/
+
+# --- Test & tooling caches ---
+.pytest_cache/
+.mypy_cache/
+.tox/
+.coverage
+coverage.xml
+
+# --- OS noise ---
+.DS_Store
+Thumbs.db
+
+# --- Dotenv / local configs ---
+*.env
+.env
+.envrc
+
+#
+out/
+dist/

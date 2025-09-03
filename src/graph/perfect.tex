@@ -1,0 +1,67 @@
+\documentclass{book}
+
+% ======================
+% Packages (load after \documentclass)
+% ======================
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage[table]{xcolor}   % table row/col coloring
+\usepackage{array}            % better tables
+\usepackage[colorinlistoftodos]{todonotes}
+\setcounter{tocdepth}{4}
+\usepackage{amsmath}
+
+
+% Graphics
+\usepackage{tikz}
+\definecolor{mainfill}{HTML}{FFF2CC}
+\definecolor{mainborder}{HTML}{D6B656}
+\tikzset{
+    mainnode/.style={
+        draw=mainborder,
+        fill=mainfill,
+        rectangle,
+        align=center,
+        inner sep=5pt,
+        rounded corners,
+        line width=0.8pt,
+        text=black,
+    }
+}
+%% fit is for process I think
+\usetikzlibrary{graphs,graphdrawing,arrows.meta,mindmap,fit,positioning}
+\usegdlibrary{layered,force}
+
+%% For hierarchical trees
+\usepackage[edges]{forest}
+
+%% Enforce non-floating placement with [H]
+\usepackage{float}
+\usepackage{caption}
+%% moves all figure captions to right
+\captionsetup{singlelinecheck=false}
+
+
+% Convenience macro for clickable file paths (you already had this)
+\newcommand{\filepath}[1]{\href{file://#1}{\path{#1}}}
+
+\begin{document}
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[
+            >=Stealth,
+            every node/.style=mainnode]
+            % the main graph
+            \graph[
+                layered layout,
+                grow=down,
+                level distance=16mm,
+                sibling distance=25mm,
+            ]{
+                lan/"language" -> alph/"alphabet";
+                lan -> word/"word";
+            };
+        \end{tikzpicture}
+        \caption{Layered graph with external auto-stacked comment boxes.}
+    \end{figure}
+\end{document}
