@@ -17,7 +17,7 @@ ENV/
 
 # --- Jupyter ---
 **/.ipynb_checkpoints/
-# خودِ .ipynb ها را حذف نکن! (نمی‌نویسیم *.ipynb)
+
 
 # --- PyCharm / IntelliJ ---
 .idea/
